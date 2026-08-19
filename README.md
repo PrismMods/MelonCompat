@@ -9,25 +9,90 @@
 [![Discord](https://img.shields.io/discord/1499236885409566891?logo=discord&logoColor=white&label=Discord&color=5865F2)](https://discord.gg/mAzAghu5Xq)
 </div>
 
-This is a mod for UnityModManager that allows running MelonLoader mods.
+Run **MelonLoader mods** in *A Dance of Fire and Ice* without MelonLoader — MelonCompat is a UnityModManager mod that ships a drop-in `MelonLoader.dll` shim, so Melon mods load side by side with your usual UMM mods.
+
 > [!NOTE]
-> any mods using IL manipulator wont work.
+> Mods that use an IL manipulator won't work.
+
+---
 
 ## Install
-1. Install the MelonCompat mod from the releases page. (right side)
-2. Launch ADOFAI once, there should now be a "MelonMods" folder inside of your ADOFAI folder.
+
+1. Download **MelonCompat** from the [releases page](https://github.com/PrismMods/MelonCompat/releases/latest) and install it like any other UnityModManager mod.
+2. Launch ADOFAI once — a `MelonMods` folder appears in your ADOFAI folder.
 3. Done.
 
-## When Installing Mods
-When installing ADOFAI mods, there is most likely a folder structure like this in the zip,
------
-MLMods
--Mods
--UserData
--UserLibs
------
-something of the above. here you have to rename the "Mods" folder into "MelonMods" then drag inside the root of your ADOFAI folder.
+## Installing Melon mods
 
+Most ADOFAI Melon mod zips look something like this:
+
+```
+MLMods/
+├── Mods/
+├── UserData/
+└── UserLibs/
+```
+
+1. Rename `Mods` → `MelonMods`.
+2. Drag the folders into the root of your ADOFAI folder:
+
+```
+A Dance of Fire and Ice/
+├── Mods/          UnityModManager mods (MelonCompat lives here)
+├── MelonMods/     MelonLoader mods go here
+├── UserData/      mod settings and saves
+└── UserLibs/      shared dependencies
+```
+
+> [!TIP]
+> Folder names vary between zips. Whatever the mod `.dll` files sit in is the folder to rename to `MelonMods`.
+
+Dependencies are found beside the mod, in the mod's own subfolder, or in `UserLibs` — all three are searched automatically.
+
+## What works
+
+| | |
+|---|---|
+| ✅ | `MelonMod` lifecycle — `OnInitializeMelon`, `OnUpdate`, `OnFixedUpdate`, `OnLateUpdate`, `OnGUI`, `OnApplicationQuit` |
+| ✅ | Scene events, `MelonCoroutines`, `MelonLogger`, `MelonEvents` |
+| ✅ | `MelonPreferences` with TOML files in `UserData` |
+| ✅ | HarmonyX patching, bridged onto UnityModManager's Harmony |
+| ❌ | Mods using an IL manipulator |
+| ❌ | IL2CPP-only mods — ADOFAI is Mono |
+
+Running under the real MelonLoader? MelonCompat detects it and stops, so nothing loads twice.
+
+## Build from source
+
+Requires the .NET SDK (see [`global.json`](global.json)). Point `<GamePath>` in [`Directory.Build.props`](Directory.Build.props) at your ADOFAI install first.
+
+```bash
+./scripts/pack.sh       # -> dist/MelonCompat/ + dist/MelonCompat.zip
+./scripts/install.sh    # pack, then copy into the game's Mods folder
+./scripts/run-tests.sh  # build the shim + sample mod, run the Mono harness
+```
+
+Check a Melon mod against the shim before running it in-game — it lists everything MelonCompat is missing:
+
+```bash
+./scripts/check-mod.sh path/to/Mod.dll
+```
+
+## Project layout
+
+```
+MelonCompat.Bootstrap/   thin UMM entry point + assembly redirector
+MelonCompat.Melon/       the shim itself, built as MelonLoader.dll
+  ├── Api/               MelonMod, MelonLogger, MelonEvents, ...
+  ├── Prefs/             MelonPreferences and the TOML reader
+  └── Support/           Harmony bridge, Unity host, probe paths
+samples/SampleMelonMod/  minimal Melon mod used by the tests
+tools/RefScan/           compatibility scanner behind check-mod.sh
+```
+
+## License
+
+[MIT](LICENSE)
 
 <a href="https://www.star-history.com/?repos=PrismMods%2FMelonCompat&type=date&legend=top-left">
  <picture>
