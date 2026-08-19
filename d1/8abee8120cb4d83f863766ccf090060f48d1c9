@@ -1,0 +1,146 @@
+README.md
+  h_6eeb8441a8a159 1-17
+.gitignore
+  s_9ada397f393b6c::t_59ac7a6a188166 1-4
+Directory.Build.props
+  s_9ada397f393b6c::t_af1fc5db0b871f 1-6
+MelonCompat.Bootstrap/AssemblyRedirector.cs
+  s_9ada397f393b6c::t_d77d2827b603cc 1-77
+MelonCompat.Bootstrap/Info.json
+  s_9ada397f393b6c::t_a6672ba3754f72 1-9
+MelonCompat.Bootstrap/LoaderUmm.cs
+  s_9ada397f393b6c::t_6dd7e084243da9 1-79
+MelonCompat.Bootstrap/MelonCompat.Bootstrap.csproj
+  s_9ada397f393b6c::t_2305f6c25dfc66 1-27
+MelonCompat.Melon/Api/Attributes.cs
+  s_9ada397f393b6c::t_af696ba50b6d96 1-264
+MelonCompat.Melon/Api/BuildInfo.cs
+  s_9ada397f393b6c::t_f84aebd8acb741 1-31
+MelonCompat.Melon/Api/ColorARGB.cs
+  s_9ada397f393b6c::t_a97767038533ab 1-202
+MelonCompat.Melon/Api/Lemon.cs
+  s_9ada397f393b6c::t_b319b225114e04 1-23
+MelonCompat.Melon/Api/LemonAssert.cs
+  s_9ada397f393b6c::t_d541b1d9a7a181 1-49
+MelonCompat.Melon/Api/LemonCryptography.cs
+  s_9ada397f393b6c::t_f411c4fa09397b 1-44
+MelonCompat.Melon/Api/Lemons.cs
+  s_9ada397f393b6c::t_8052c05b0b0a4b 1-129
+MelonCompat.Melon/Api/Melon.cs
+  s_9ada397f393b6c::t_aed0065aaf545c 1-20
+MelonCompat.Melon/Api/MelonAssembly.cs
+  s_9ada397f393b6c::t_dafd40d6adda50 1-211
+MelonCompat.Melon/Api/MelonAssemblyResolver.cs
+  s_9ada397f393b6c::t_eea03049da363e 1-62
+MelonCompat.Melon/Api/MelonBase.cs
+  s_9ada397f393b6c::t_63bc13b77b8957 1-294
+MelonCompat.Melon/Api/MelonCoroutines.cs
+  s_9ada397f393b6c::t_d4a710b11e7216 1-11
+MelonCompat.Melon/Api/MelonDebug.cs
+  s_9ada397f393b6c::t_2b2c2e3b303695 1-25
+MelonCompat.Melon/Api/MelonEnvironment.cs
+  s_9ada397f393b6c::t_10e4b3935a254f 1-70
+MelonCompat.Melon/Api/MelonEvent.cs
+  s_9ada397f393b6c::t_806fc89bfb4e56 1-151
+MelonCompat.Melon/Api/MelonEvents.cs
+  s_9ada397f393b6c::t_6e4434e378462b 1-29
+MelonCompat.Melon/Api/MelonHandler.cs
+  s_9ada397f393b6c::t_cd4538eeb41a4e 1-34
+MelonCompat.Melon/Api/MelonLaunchOptions.cs
+  s_9ada397f393b6c::t_0c86c4bd2e4d32 1-30
+MelonCompat.Melon/Api/MelonLogger.cs
+  s_9ada397f393b6c::t_b0d1e779f3bf10 1-144
+MelonCompat.Melon/Api/MelonMod.cs
+  s_9ada397f393b6c::t_c76acf9763ed13 1-27
+MelonCompat.Melon/Api/MelonModLogger.cs
+  s_9ada397f393b6c::t_8adc10639fe5d6 1-13
+MelonCompat.Melon/Api/MelonUtils.cs
+  s_9ada397f393b6c::t_ae0c6599d385ec 1-159
+MelonCompat.Melon/Api/SemVersion.cs
+  s_9ada397f393b6c::t_7476b7a92523e2 1-108
+MelonCompat.Melon/MelonCompat.Melon.csproj
+  s_9ada397f393b6c::t_c6567d7271ca1c 1-40
+MelonCompat.Melon/Prefs/MelonPreferences.cs
+  s_9ada397f393b6c::t_41ce28f0254a2b 1-187
+MelonCompat.Melon/Prefs/MelonPreferencesCategory.cs
+  s_9ada397f393b6c::t_dd11db1406e3eb 1-99
+MelonCompat.Melon/Prefs/MelonPreferencesEntry.cs
+  s_9ada397f393b6c::t_8d6a7194db6b22 1-109
+MelonCompat.Melon/Prefs/PrefConvert.cs
+  s_9ada397f393b6c::t_04683f27f92357 1-65
+MelonCompat.Melon/Prefs/ReflectiveCategory.cs
+  s_9ada397f393b6c::t_681bba68b09b06 1-90
+MelonCompat.Melon/Prefs/Toml.cs
+  s_9ada397f393b6c::t_a0f6cbc265484c 1-141
+MelonCompat.Melon/Prefs/ValueValidator.cs
+  s_9ada397f393b6c::t_59ca7d3effe0c3 1-35
+MelonCompat.Melon/Support/ExternDispatch.cs
+  s_9ada397f393b6c::t_c385112adbc46c 1-86
+MelonCompat.Melon/Support/ExternPatcher.cs
+  s_9ada397f393b6c::t_3ade231b92aaf9 1-304
+MelonCompat.Melon/Support/HarmonyBridge.cs
+  s_9ada397f393b6c::t_8133430b662f32 1-284
+MelonCompat.Melon/Support/HarmonyXCode.cs
+  s_9ada397f393b6c::t_cfb16b6306736c 1-1380
+MelonCompat.Melon/Support/HarmonyXShims.cs
+  s_9ada397f393b6c::t_a9dd72540fe304 1-100
+MelonCompat.Melon/Support/HarmonyXTypes.cs
+  s_9ada397f393b6c::t_aef81f8aad4a55 1-99
+MelonCompat.Melon/Support/LogSink.cs
+  s_9ada397f393b6c::t_f8d089f5f8fb8d 1-44
+MelonCompat.Melon/Support/MelonCompatHost.cs
+  s_9ada397f393b6c::t_124be850b303f3 1-233
+MelonCompat.Melon/Support/ProbePaths.cs
+  s_9ada397f393b6c::t_e3cce95b98f818 1-15
+MelonCompat.Melon/Support/UmmModList.cs
+  s_9ada397f393b6c::t_e36525578def17 1-121
+MelonCompat.Melon/Support/UnityHost.cs
+  s_9ada397f393b6c::t_ef0c92103374d1 1-58
+MelonCompat.slnx
+  s_9ada397f393b6c::t_b24726c4f18b05 1-8
+global.json
+  s_9ada397f393b6c::t_aa3a041a0b4629 1-6
+samples/SampleMelonMod/SampleMelonMod.csproj
+  s_9ada397f393b6c::t_576356810e76ee 1-29
+samples/SampleMelonMod/SampleMod.cs
+  s_9ada397f393b6c::t_d88f8e00352d1f 1-96
+scripts/check-mod.sh
+  s_9ada397f393b6c::t_bbb6affa66ce91 1-15
+scripts/install.sh
+  s_9ada397f393b6c::t_2e8bf56250d9c0 1-15
+scripts/pack.sh
+  s_9ada397f393b6c::t_1de72579ebb7c1 1-20
+scripts/run-tests.sh
+  s_9ada397f393b6c::t_cd837e3febd05b 1-21
+tests/TranslationTest.cs
+  s_9ada397f393b6c::t_7c2ca350bbc3e5 1-209
+tools/RefScan/Program.cs
+  s_9ada397f393b6c::t_af3e3344268650 1-142
+tools/RefScan/RefScan.csproj
+  s_9ada397f393b6c::t_8c21bc0bc9049a 1-10
+.gitattributes
+  h_6eeb8441a8a159 1-2
+LICENSE
+  h_6eeb8441a8a159 1-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "d18abee8120cb4d83f863766ccf090060f48d1c9",
+  "prompts": {},
+  "humans": {
+    "h_6eeb8441a8a159": {
+      "author": "koren <131921956+kkorenn@users.noreply.github.com>"
+    }
+  },
+  "sessions": {
+    "s_9ada397f393b6c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "240ce15d-faa9-46f5-b87b-7d07a5a46ed4",
+        "model": "claude-opus-5"
+      },
+      "human_author": "koren <131921956+kkorenn@users.noreply.github.com>"
+    }
+  }
+}
