@@ -11,7 +11,22 @@
 
 This is a mod for UnityModManager that allows running MelonLoader mods.
 > [!NOTE]
-> any mods using IL manipulator wont work sorry
+> any mods using IL manipulator wont work.
+
+## Install
+1. Install the MelonCompat mod from the releases page. (right side)
+2. Launch ADOFAI once, there should now be a "MelonMods" folder inside of your ADOFAI folder.
+3. Done.
+
+## When Installing Mods
+When installing ADOFAI mods, there is most likely a folder structure like this in the zip,
+-----
+MLMods
+-Mods
+-UserData
+-UserLibs
+-----
+something of the above. here you have to rename the "Mods" folder into "MelonMods" then drag inside the root of your ADOFAI folder.
 
 
 <a href="https://www.star-history.com/?repos=PrismMods%2FMelonCompat&type=date&legend=top-left">
