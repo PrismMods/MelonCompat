@@ -14,4 +14,4 @@ This is a mod for UnityModManager that allows running MelonLoader mods.
 > any mods using IL manipulator wont work sorry
 
 
-[![Star History Chart](https://api.star-history.com/chart?repos=PrismMods/Quartz&type=date&legend=top-left&sealed_token=jLOAJP3ZX3bJC2EMB8uFffsM-mLOmUQtAw7dx5nxei-RcXYLxb00DWLaruw5CERMja-OoZV3POlvGUKXAIzTDRRBiX2E89nDk34r__RKJGybbxXP-Awo4g)](https://www.star-history.com/?repos=PrismMods%2FQuartz&type=date&legend=top-left)
+[![Star History Chart](https://api.star-history.com/chart?repos=PrismMods/MelonCompat&type=date&legend=top-left&sealed_token=jLOAJP3ZX3bJC2EMB8uFffsM-mLOmUQtAw7dx5nxei-RcXYLxb00DWLaruw5CERMja-OoZV3POlvGUKXAIzTDRRBiX2E89nDk34r__RKJGybbxXP-Awo4g)](https://www.star-history.com/?repos=PrismMods%2MelonCompat&type=date&legend=top-left)
