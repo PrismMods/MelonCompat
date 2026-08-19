@@ -1,0 +1,25 @@
+MelonCompat.Melon/Support/UmmModList.cs
+  s_f044b84a65041a::t_c09c1cca538ff0 76,79-89
+  s_f044b84a65041a::t_1dae2b7d1b2b37 90
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "85df4e9a0d9661fd49ef87c6ae6b2298255e4620",
+  "prompts": {},
+  "humans": {
+    "h_6eeb8441a8a159": {
+      "author": "koren <131921956+kkorenn@users.noreply.github.com>"
+    }
+  },
+  "sessions": {
+    "s_f044b84a65041a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7b448885-4fa0-4146-adc0-34e54027c84e",
+        "model": "claude-opus-5"
+      },
+      "human_author": "koren <131921956+kkorenn@users.noreply.github.com>"
+    }
+  }
+}
