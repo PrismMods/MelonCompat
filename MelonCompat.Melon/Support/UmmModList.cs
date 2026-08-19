@@ -73,8 +73,20 @@ public static class UmmModList {
         entry.OnToggle = (_, value) => Toggle(melon, preference, value);
 
         published[melon] = entry;
-        UnityModManager.modEntries.Add(entry);
+        Insert(entry);
     }
+
+    // UnityModManager renders modEntries in list order, so slot the row where its
+    // name belongs instead of appending it after every existing mod.
+    private static void Insert(UnityModManager.ModEntry entry) {
+        int index = UnityModManager.modEntries.FindIndex(
+            other => string.Compare(NameOf(other), NameOf(entry), StringComparison.OrdinalIgnoreCase) > 0);
+        if(index < 0) UnityModManager.modEntries.Add(entry);
+        else UnityModManager.modEntries.Insert(index, entry);
+    }
+
+    private static string NameOf(UnityModManager.ModEntry entry) =>
+        string.IsNullOrEmpty(entry.Info?.DisplayName) ? entry.Info?.Id ?? "" : entry.Info.DisplayName;
 
     // A MelonLoader mod has no disabled state, so the toggle is expressed as the
     // closest honest equivalent: deinitialise and drop its Harmony patches on the
