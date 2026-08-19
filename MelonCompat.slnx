@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <BuildType Name="Debug" />
+    <BuildType Name="Release" />
+  </Configurations>
+  <Project Path="MelonCompat.Bootstrap/MelonCompat.Bootstrap.csproj" />
+  <Project Path="MelonCompat.Melon/MelonCompat.Melon.csproj" />
+</Solution>

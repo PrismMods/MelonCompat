@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>warnings</Nullable>
+		<LangVersion>latest</LangVersion>
+		<RootNamespace>MelonLoader</RootNamespace>
+		<!-- The assembly *is* the MelonLoader surface: mods compiled against the real
+		     loader carry an assembly reference to the simple name "MelonLoader", and the
+		     bootstrap's resolver hands them this file instead. -->
+		<AssemblyName>MelonLoader</AssemblyName>
+		<IsPackable>false</IsPackable>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<ManagedDir>$(GamePath)/$(GameData)/Managed</ManagedDir>
+		<UmmDir>$(ManagedDir)/UnityModManager</UmmDir>
+		<LibDir>$(MSBuildProjectDirectory)/../lib</LibDir>
+	</PropertyGroup>
+
+	<ItemDefinitionGroup>
+		<Reference>
+			<Private>false</Private>
+			<ExternallyResolved>true</ExternallyResolved>
+		</Reference>
+	</ItemDefinitionGroup>
+
+	<ItemGroup>
+		<Reference Include="UnityEngine"><HintPath>$(ManagedDir)/UnityEngine.dll</HintPath></Reference>
+		<Reference Include="UnityEngine.CoreModule"><HintPath>$(ManagedDir)/UnityEngine.CoreModule.dll</HintPath></Reference>
+		<Reference Include="UnityEngine.IMGUIModule"><HintPath>$(ManagedDir)/UnityEngine.IMGUIModule.dll</HintPath></Reference>
+		<Reference Include="UnityModManager"><HintPath>$(UmmDir)/UnityModManager.dll</HintPath></Reference>
+		<!-- UnityModManager's Harmony. It is not HarmonyX, which is why the
+		     translation layer exists — and on Apple Silicon it is the only detour
+		     engine that works, because its embedded MonoMod.Core is new enough. -->
+		<Reference Include="0Harmony"><HintPath>$(UmmDir)/0Harmony.dll</HintPath></Reference>
+		<Reference Include="dnlib"><HintPath>$(UmmDir)/dnlib.dll</HintPath></Reference>
+	</ItemGroup>
+
+</Project>

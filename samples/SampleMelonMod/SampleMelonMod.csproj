@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<!-- Deliberately compiled against the real MelonLoader and the real HarmonyX,
+	     exactly as a mod off the internet would be. Nothing in this project knows
+	     MelonCompat exists; that is the point of it as a test subject. -->
+	<PropertyGroup>
+		<TargetFramework>net472</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<AssemblyName>SampleMelonMod</AssemblyName>
+		<RootNamespace>SampleMelonMod</RootNamespace>
+		<IsPackable>false</IsPackable>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<NoWarn>$(NoWarn);NU1701;CS0618</NoWarn>
+		<MelonDir>$(GamePath)/MelonLoader/net35</MelonDir>
+	</PropertyGroup>
+
+	<ItemDefinitionGroup>
+		<Reference>
+			<Private>false</Private>
+			<ExternallyResolved>true</ExternallyResolved>
+		</Reference>
+	</ItemDefinitionGroup>
+
+	<ItemGroup>
+		<Reference Include="MelonLoader"><HintPath>$(MelonDir)/MelonLoader.dll</HintPath></Reference>
+		<Reference Include="0Harmony"><HintPath>$(MelonDir)/0Harmony.dll</HintPath></Reference>
+	</ItemGroup>
+
+</Project>

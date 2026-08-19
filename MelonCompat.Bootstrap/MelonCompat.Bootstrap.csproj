@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>warnings</Nullable>
+		<LangVersion>latest</LangVersion>
+		<RootNamespace>MelonCompat.Bootstrap</RootNamespace>
+		<AssemblyName>MelonCompat</AssemblyName>
+		<IsPackable>false</IsPackable>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<ManagedDir>$(GamePath)/$(GameData)/Managed</ManagedDir>
+	</PropertyGroup>
+
+	<ItemDefinitionGroup>
+		<Reference>
+			<Private>false</Private>
+			<ExternallyResolved>true</ExternallyResolved>
+		</Reference>
+	</ItemDefinitionGroup>
+
+	<ItemGroup>
+		<Reference Include="UnityModManager"><HintPath>$(ManagedDir)/UnityModManager/UnityModManager.dll</HintPath></Reference>
+	</ItemGroup>
+
+</Project>
