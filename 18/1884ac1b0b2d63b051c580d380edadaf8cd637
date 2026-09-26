@@ -1,0 +1,28 @@
+MelonCompat.Melon/Support/MelonCompatHost.cs
+  s_129d90e66249f7::t_0b864bea8157ff 79-80
+  s_129d90e66249f7::t_f670411cbe703b 3
+  s_129d90e66249f7::t_e34e433a8f072c 135-154
+MelonCompat.Bootstrap/Info.json
+  s_129d90e66249f7::t_860b9469e186a5 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "181884ac1b0b2d63b051c580d380edadaf8cd637",
+  "prompts": {},
+  "humans": {
+    "h_6eeb8441a8a159": {
+      "author": "koren <131921956+kkorenn@users.noreply.github.com>"
+    }
+  },
+  "sessions": {
+    "s_129d90e66249f7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ce641f2f-290c-48e0-9411-e218de23cb62",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "koren <131921956+kkorenn@users.noreply.github.com>"
+    }
+  }
+}
