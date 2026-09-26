@@ -1,5 +1,6 @@
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using MelonLoader.Utils;
 using UnityEngine.SceneManagement;
 using UnityModManagerNet;
@@ -75,6 +76,8 @@ public static class MelonCompatHost {
         MelonEvents.OnPreInitialization.Invoke();
         MelonBase.Execute(p => p.OnPreInitialization(), plugins);
 
+        LoadUserLibs();
+
         string[] files = FindModFiles(modsDirectory);
         foreach(string file in files) MelonAssembly.LoadMelonAssembly(file);
 
@@ -127,6 +130,26 @@ public static class MelonCompatHost {
             .Where(f => !Path.GetFileName(f).StartsWith(".", StringComparison.Ordinal))
             .OrderBy(f => f, StringComparer.OrdinalIgnoreCase)
             .ToArray();
+    }
+
+    // MelonLoader loads every managed UserLibs assembly up front, not on demand.
+    // Plugin-style libraries (e.g. Overlayer modules) are never referenced by the
+    // mod that consumes them — it finds them by scanning the AppDomain — so a
+    // probe path alone would leave them unloaded forever.
+    private static void LoadUserLibs() {
+        string directory = MelonEnvironment.UserLibsDirectory;
+        if(!Directory.Exists(directory)) return;
+
+        HashSet<string> loaded = new(
+            AppDomain.CurrentDomain.GetAssemblies().Select(a => a.GetName().Name),
+            StringComparer.OrdinalIgnoreCase);
+
+        foreach(string file in Directory.GetFiles(directory, "*.dll").OrderBy(f => f, StringComparer.OrdinalIgnoreCase)) {
+            string name;
+            try { name = AssemblyName.GetAssemblyName(file).Name; } catch { continue; } // native library
+            if(!loaded.Add(name)) continue; // never load a second copy of something already present
+            MelonAssembly.LoadMelonAssembly(file, false);
+        }
     }
 
     private static readonly HashSet<string> LibraryFolders =

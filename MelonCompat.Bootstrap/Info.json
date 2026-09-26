@@ -2,7 +2,7 @@
   "Id": "MelonCompat",
   "DisplayName": "MelonCompat",
   "Author": "MelonCompat",
-  "Version": "1.0.0",
+  "Version": "1.0.2",
   "ManagerVersion": "0.27.0",
   "AssemblyName": "MelonCompat.dll",
   "EntryMethod": "MelonCompat.Bootstrap.LoaderUmm.Load"
