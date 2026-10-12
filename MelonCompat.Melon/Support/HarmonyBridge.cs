@@ -95,7 +95,27 @@ public static class HarmonyBridge {
         byte[] translated = Translate(original, Path.GetFileName(full));
         Assembly loaded = translated == null ? Assembly.LoadFrom(full) : Assembly.Load(translated);
         lock(Origins) Origins[loaded] = full;
+        if(translated != null) PatchLocation();
         return loaded;
+    }
+
+    // Mods find their own folder through Assembly.Location, which is empty for an
+    // assembly loaded from bytes. Report the file it was translated from instead.
+    private static bool locationPatched;
+
+    private static void PatchLocation() {
+        if(locationPatched) return;
+        locationPatched = true;
+        try {
+            MethodInfo getter = typeof(object).Assembly.GetType().GetProperty(nameof(Assembly.Location)).GetGetMethod();
+            new Harmony("meloncompat.assemblylocation").Patch(getter, postfix: new HarmonyMethod(typeof(HarmonyBridge), nameof(LocationPostfix)));
+        } catch(Exception e) {
+            MelonLogger.Warning($"[Harmony] could not patch Assembly.Location; translated mods will see an empty path: {e.Message}");
+        }
+    }
+
+    private static void LocationPostfix(Assembly __instance, ref string __result) {
+        if(string.IsNullOrEmpty(__result)) __result = OriginOf(__instance) ?? __result;
     }
 
     private static byte[] Translate(byte[] data, string displayName) {
