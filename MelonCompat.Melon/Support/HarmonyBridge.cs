@@ -159,7 +159,7 @@ public static class HarmonyBridge {
         foreach(MethodDef method in module.GetTypes().SelectMany(t => t.Methods)) {
             if(method.Body == null) continue;
             foreach(Instruction instruction in method.Body.Instructions) {
-                if(instruction.Operand is not IMethod target) continue;
+                if(instruction.Operand is not IMethod target || !target.IsMethod) continue;
 
                 // A generic call is a MethodSpec wrapping the definition; the map is
                 // keyed on the definition, and the instantiation has to be carried
@@ -209,7 +209,7 @@ public static class HarmonyBridge {
             IList<Instruction> instructions = method.Body.Instructions;
             for(int i = 0; i < instructions.Count; i++) {
                 Instruction instruction = instructions[i];
-                if(instruction.Operand is not IField field || !IsHarmonyMember(field)) continue;
+                if(instruction.Operand is not IField field || !field.IsField || !IsHarmonyMember(field)) continue;
                 if(!DroppedFields.Contains($"{field.DeclaringType.FullName}::{field.Name}")) continue;
 
                 if(instruction.OpCode.Code == dnlib.DotNet.Emit.Code.Stfld) {

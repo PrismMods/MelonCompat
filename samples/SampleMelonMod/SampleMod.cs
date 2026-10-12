@@ -31,6 +31,8 @@ public class SampleMod : MelonMod {
         HarmonyLib.Harmony harmony = new HarmonyLib.Harmony("melonCompat.sample");
         harmony.UnpatchSelf();
         HarmonyLib.Harmony.UnpatchID("nobody.at.all");
+        // A Harmony field read (Patches.Prefixes) once aborted translation of the whole mod.
+        _ = HarmonyLib.Harmony.GetPatchInfo(typeof(SampleMod).GetMethod(nameof(TouchHarmonyX)))?.Prefixes;
         return "ok";
     }
 
